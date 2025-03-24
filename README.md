@@ -24,7 +24,7 @@ I could not get around this conflict in Python3.10,
 so I reccommend in your venv, doing "pip install chromadb --no-deps"
 Unless someone has a better workaround and I'm an idiot. We'll find out.
 
-If you would like to use it across the LAN on other systeme or even via VPN, you need to create self signed certs with OpenSSL 
+If you would like to use it across the LAN on other systems or even via VPN, you need to create self signed certs with OpenSSL 
 
 ```
 mkdir ssl
