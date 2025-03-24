@@ -19,6 +19,7 @@ TO BE USED IN A PYTHON3.10 VENV---------------------
 You can then point to http://localhost:5000/static/index.html
 
 NOTE ABOUT CHROMADB DEPENDENCIES--------------------
+
 TTS uses numpy 1.22.0, chromadb wants numpy 1.22.5.
 I could not get around this conflict in Python3.10,
 so I reccommend in your venv, doing "pip install chromadb --no-deps"
