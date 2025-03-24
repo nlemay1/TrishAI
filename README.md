@@ -21,8 +21,11 @@ You can then point to http://localhost:5000/static/index.html
 NOTE ABOUT CHROMADB DEPENDENCIES--------------------
 
 TTS uses numpy 1.22.0, chromadb wants numpy 1.22.5.
+
 I could not get around this conflict in Python3.10,
+
 so I reccommend in your venv, doing "pip install chromadb --no-deps"
+
 Unless someone has a better workaround and I'm an idiot. We'll find out.
 
 If you would like to use it across the LAN on other systems or even via VPN, you need to create self signed certs with OpenSSL 
