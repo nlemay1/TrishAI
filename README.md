@@ -1,7 +1,18 @@
 # TrishAI
-A fully self-hosted conversational AI assistant using Mistral 7B, ChromaDB for memory, Faster-Whisper transcription, XTTSv2, and FastAPI accesible through a WebGUI
+A fully self-hosted conversational AI assistant using Mistral 7B, 
+
+ChromaDB for memory, 
+
+Faster-Whisper transcription, 
+
+XTTSv2, 
+
+and FastAPI 
+
+accesible through a WebGUI
 
 This is a personal passion project aimed at creating a smooth experience on local hardware with privacy and security in mind.
+
 It can be used remotely in a browser if you setup a VPN on the host machine.
 
 Current Tested Setup:
