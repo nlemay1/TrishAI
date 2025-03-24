@@ -30,7 +30,8 @@ TTS uses numpy 1.22.0, chromadb wants numpy 1.22.5.
 
 I could not get around this conflict in Python3.10,
 
-so I reccommend in your venv, using: 
+so I reccommend in your venv, using:
+
 ```pip install chromadb --no-deps```
 
 Unless someone has a better workaround and I'm an idiot. We'll find out.
