@@ -60,7 +60,7 @@ An install script is provided.
 
 The dependencies + CUDA + CUDNN are very finicky together so it runs best in a docker container.
 
-The script also creates a cert file so it can be used across your LAN on https://<machine-ip>:5000/static/index.html
+The script also creates a cert file so it can be used across your LAN on ``` https://<machine-ip>:5000/static/index.html ```
 
 This is the best/easiest way I've found to get mic permissions to work on any browser.
 
