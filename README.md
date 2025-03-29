@@ -100,10 +100,16 @@ chmod +x install-trish.sh
 
 You can then point to https://localhost:5000/static/index.html
 
+To stop it:
+```
+docker-compose down
+```
+
+To start it:
+```
+docker-compose up -d
+```
+
 It can be accessed remotely while running via VPN, or whatever method of your choosing.
 
 The tested setup is using Wireguard, and then split tunnel on the client IP to the machine hosting the app.
-
-
-  - Add your phone/tablet as a client
-  - In your phone/tablet vpn app config set "Allowed Ips" to 192.168.x.x/32 to split tunnel
