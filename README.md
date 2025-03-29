@@ -58,7 +58,7 @@ Linux only for right now.
 
 An install script is provided.
 
-The dependencies are very finicky so it runs best in a docker container.
+The dependencies + CUDA + CUDNN are very finicky together so it runs best in a docker container.
 
 The script also creates a cert file so it can be used across your LAN on https://<machine-ip>:5000/static/index.html
 
