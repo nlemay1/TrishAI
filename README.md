@@ -43,19 +43,27 @@ llm = Llama(
 )
 ```
 The config above seems to be the best parameters settings so far for accurate inference and minimal hallucination on a 3060 with 12GB VRAM without maxxing it out.
+
 Although, n_ctx=8192 has also yielded fairly good results, and leaves a lot of overhead for regular PC use alongside it.
+
 Again, still in testing, so more to come.
 
 Changing settings on XTTS, or moving Faster-Whisper to CPU, or some other trade-off increases latency by quite a bit.
+
 I haven't tried parallel processing, but maybe soon.
 
 Linux only for right now.
 
 **Linux Install**
+
 An install script is provided.
+
 The dependencies are very finicky so it runs best in a docker container.
+
 The script also creates a cert file so it can be used across your LAN on https://<machine-ip>:5000/static/index.html
+
 This is the best/easiest way I've found to get mic permissions to work on any browser.
+
 Runs best with python3.10 (which the script will also install).
 
 **GitHub Clone:**
@@ -79,6 +87,7 @@ chmod +x install-trish.sh
 You can then point to https://localhost:5000/static/index.html
 
 It can be accessed remotely while running via VPN, or whatever method of your choosing.
+
 The tested setup is using Wireguard, and then split tunnel on the client IP to the machine hosting the app.
 
 
