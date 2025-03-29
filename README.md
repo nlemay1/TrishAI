@@ -54,9 +54,23 @@ I haven't tried parallel processing, but maybe soon.
 
 Linux only for right now.
 
-**Linux Install**
+<h2><b>Linux Install</b></h2>
 
 An install script is provided.
+
+You will need to have docker and docker dialog installed to use it:
+
+```
+sudo apt update
+sudo apt install docker-compose docker.io dialog -y
+```
+
+And make sure your user can run it:
+
+```
+sudo usermod -aG docker $USER
+newgrp docker
+```
 
 The dependencies + CUDA + CUDNN are very finicky together so it runs best in a docker container.
 
