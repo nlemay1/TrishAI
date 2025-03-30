@@ -76,7 +76,7 @@ newgrp docker
 
 The dependencies + CUDA + CUDNN are very finicky together so it runs best in a docker container.
 
-The script also creates a cert file so it can be used across your LAN on ``` https://<machine-ip>:5000/static/index.html ```
+The script also creates cert and key files for the WebGUI so it can be used across your LAN on ``` https://<machine-ip>:5000/static/index.html ```
 
 This is the best/easiest way I've found to get mic permissions to work on any browser.
 
@@ -102,6 +102,8 @@ chmod +x install-trish.sh
 
 You can then point to https://localhost:5000/static/index.html
 
+<h2><b>Usage</b></h2>
+
 To stop it:
 ```
 docker-compose down
@@ -112,11 +114,19 @@ To start it:
 docker-compose up -d
 ```
 
+The WebGUI is pretty straightforrward, enter text/send and Trish responds in the dialog box.
+
+Press "Talk" to record voice. It will record until you hit "Stop", and send the voice data to generate a response.
+
+Latency can be anywhere between 3s-12s depending on the response length (tokens generated).
+
+
 It can be accessed remotely while running via VPN, or whatever method of your choosing.
 
-The tested setup is using Wireguard, and then split tunnel on the client IP under "Allowed IPs" to the machine hosting the app.
+The tested setup uses Wireguard, and then split tunnel on the client IP under "Allowed IPs" to the machine hosting the app.
 
-<h2><b>ALTERNATIVELY:</b></h2>
+
+<h2><b>ALTERNATIVE INSTALL:</b></h2>
 
 You can make your own virtual environment with Python3.10 and use the requirements.txt to run "trish.py".
 
@@ -133,15 +143,16 @@ There's probably a better way to resolve this, but I will reference the statemen
 - Still sometimes hallucinates responses occasionally. System prompt and memory context/recall could be structured much better than current.
 - Latency with voice is pretty high, especially beyond ~100 tokens. Possible fixes could be parallel processing, or "chunking"/buffering sentences that stream.
 - Security in general.....could just be better.
-- Memory context and how it's currently being used doesn't really allow for a "real" conversation of any kind. It's good at very structured prompts but anything beyond that and it kind of goes off the rails.
+- Memory context and how it's currently being used doesn't really allow for a "real" conversation, or at least not super consistently. It's good at very structured prompts but anything beyond that and it can go off the rails.
 
 <h2><b>Features/Fixes on the Wish List</b></h2>
 
-- Better conversational (per session context) and long term memory -- allowing for a more fluid and complex response flow.
+- Better conversational (per session context) and long term memory -- allowing for a more fluid and complex response flow. 
 - More search options on the pipeline, currently it's just Wikipedia, but the idea is to add more and allow user input to guide it (e.g. "Can you check that information from the Associated Press website?"), and also NewsAPI integration along with Weather.
 - Add in file upload -- reading/summary/inference for PDFs, images and other documents
-- Possibly adding in tasks on a basic level, perhaps reminders. I'm wary of giving it functionality to have OS level access as I'm both not experienced enough, and it opens up a much larger security threat vector
+- Possibly adding in tasks on a basic level, perhaps reminders. I'm wary of giving it functionality to have OS level access as I'm both not experienced enough, and it opens up a much larger security threat
 - A standalone mobile app
-- A more solid GUI or at least a more involved WebGUI with settings to adjust different parameters within the model.
+- A more solid GUI or at least a more involved WebGUI with settings to adjust different parameters within the model (i.e. max_tokens, gpu_layers, memory wipe, n_ctx, etc.)
+- It used to have a "signal" endpoint where you could chat with it via the Signal App, with it's own number. I have used it by giving it a GoogleVoice number coupled with Signal-CLI, and it works well. Adding that back in might be nice.
 
 Thanks for checking it out!
