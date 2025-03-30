@@ -113,3 +113,33 @@ docker-compose up -d
 It can be accessed remotely while running via VPN, or whatever method of your choosing.
 
 The tested setup is using Wireguard, and then split tunnel on the client IP to the machine hosting the app.
+
+<h2><b>ALTERNATIVELY:</b></h2>
+
+You can make your own virtual environment with Python3.10 and use the requirements.txt to run "trish.py".
+
+<b>Note:</b> there is a dependency conflict that I haven't found a workaround to between TTS, numpy and chromadb.
+
+TTS needs numpy 1.22.0, chromadb needs numpy 1.22.5 or up. 
+
+I've just been running it by installing chromadb with the --no-deps flag.
+
+There's probably a better way to resolve this, but I will reference the statement aforementioned: I'm not a very experienced coder.
+
+<h2><b>Known Issues</b></h2>
+
+- Still sometimes hallucinates responses occasionally. System prompt and memory context/recall could be structured much better than current.
+- Latency with voice is pretty high, especially beyond ~100 tokens. Possible fixes could be parallel processing, or "chunking"/buffering sentences that stream.
+- Security in general.....could just be better.
+- Memory context and how it's currently being used doesn't really allow for a "real" conversation of any kind. It's good at very structured prompts but anything beyond that and it kind of goes off the rails.
+
+<h2><b>Features/Fixes on the Wish List</b></h2>
+
+- Better conversational (per session context) and long term memory -- allowing for a more fluid and complex response flow.
+- More search options on the pipeline, currently it's just Wikipedia, but the idea is to add more and allow user input to guide it (e.g. "Can you check that information from the Associated Press website?"), and also NewsAPI integration along with Weather.
+- Add in file upload -- reading/summary/inference for PDFs, images and other documents
+- Possibly adding in tasks on a basic level, perhaps reminders. I'm wary of giving it functionality to have OS level access as I'm both not experienced enough, and it opens up a much larger security threat vector
+- A standalone mobile app
+- A more solid GUI or at least a more involved WebGUI with settings to adjust different parameters within the model.
+
+Thanks for checking it out!
