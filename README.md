@@ -112,7 +112,7 @@ docker-compose up -d
 
 It can be accessed remotely while running via VPN, or whatever method of your choosing.
 
-The tested setup is using Wireguard, and then split tunnel on the client IP to the machine hosting the app.
+The tested setup is using Wireguard, and then split tunnel on the client IP under "Allowed IPs" to the machine hosting the app.
 
 <h2><b>ALTERNATIVELY:</b></h2>
 
