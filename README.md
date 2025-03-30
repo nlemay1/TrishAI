@@ -58,6 +58,8 @@ Linux only for right now.
 
 An install script is provided.
 
+It needs about 22GB total for install.
+
 You will need to have docker and docker dialog installed to use it:
 
 ```
