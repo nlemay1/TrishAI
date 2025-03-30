@@ -24,7 +24,7 @@ Current Tested Setup:
   - ChromaDB
  
 
-The easiest way to adjust VRAM usage if you have more or less VRAM is to adjust the Mistral model's context window, or gpu_layers, or both in this code block of the trish-ai.py:
+The easiest way to adjust VRAM usage if you have more or less VRAM is to adjust the Mistral model's context window, or gpu_layers, or both in this code block inside of trish.py:
 ```
 llm = Llama(
     model_path=MODEL_NAME,
