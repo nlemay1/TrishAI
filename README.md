@@ -147,7 +147,8 @@ There's probably a better way to resolve this, but I will reference the statemen
 
 <h2><b>Features/Fixes on the Wish List</b></h2>
 
-- Better conversational (per session context) and long term memory -- allowing for a more fluid and complex response flow. 
+- The whole crux of the project is to get it to a point where it can "configure" itself on startup and help the user find a clear direction for "use" with the AI. For example, if the user says "I'm going to use this for research" it can adjut accordingly in it's config, memory, etc. Or if the user says "I'm not sure yet." it takes a different path. Or if the user says "I'd like this for conversation and therapy". 
+- Better conversational (per session context) and long term memory -- allowing for a more fluid and complex response flow.
 - More search options on the pipeline, currently it's just Wikipedia, but the idea is to add more and allow user input to guide it (e.g. "Can you check that information from the Associated Press website?"), and also NewsAPI integration along with Weather.
 - Add in file upload -- reading/summary/inference for PDFs, images and other documents
 - Possibly adding in tasks on a basic level, perhaps reminders. I'm wary of giving it functionality to have OS level access as I'm both not experienced enough, and it opens up a much larger security threat
