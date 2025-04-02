@@ -24,7 +24,7 @@ Current Tested Setup:
   - ChromaDB
  
 
-The easiest way to adjust VRAM usage if you have more or less VRAM is to adjust the Mistral model's context window, or gpu_layers, or both in this code block inside of trish.py:
+The easiest way to adjust VRAM usage if you have more or less VRAM is to adjust the Mistral model's context window, or gpu_layers, or both in this code block inside of trish.py before build:
 ```
 llm = Llama(
     model_path=MODEL_NAME,
@@ -56,49 +56,7 @@ Linux only for right now.
 
 <h2><b>Linux Install</b></h2>
 
-An install script is provided.
 
-It needs about 22GB total for install.
-
-You will need to have docker and docker dialog installed to use it:
-
-```
-sudo apt update
-sudo apt install docker-compose docker.io dialog -y
-```
-
-And make sure your user can run it:
-
-```
-sudo usermod -aG docker $USER
-newgrp docker
-```
-
-The dependencies + CUDA + CUDNN are very finicky together so it runs best in a docker container.
-
-The script also creates cert and key files for the WebGUI so it can be used across your LAN on ``` https://<machine-ip>:5000/static/index.html ```
-
-This is the best/easiest way I've found to get mic permissions to work on any browser.
-
-Runs best with python3.10 (which the script will also install).
-
-**GitHub Clone:**
-
-```
-git clone https://github.com/nlemay1/trish-ai
-cd trish-ai
-chmod +x install-trish.sh
-./install-trish.sh
-```
-
-**Tarball Install:**
-
-```
-tar -xzvf trish-ai.tar.gz
-cd trish-ai
-chmod +x install-trish.sh
-./install-trish.sh
-```
 
 You can then point to https://localhost:5000/static/index.html
 
