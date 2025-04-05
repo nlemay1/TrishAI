@@ -22,7 +22,10 @@ Current Tested Setup:
   - XTTSv2
   - Faster-Whisper
   - ChromaDB
- 
+
+<b>If you have a GPU with lower VRAM please see below to adjust in the script</b>
+
+<h2><b>Performance Tweaks</b></h2>
 
 The easiest way to adjust VRAM usage if you have more or less VRAM is to adjust the Mistral model's context window, or gpu_layers, or both in this code block inside of trish.py before build:
 ```
@@ -54,23 +57,18 @@ I haven't tried parallel processing, but maybe soon.
 
 Linux only for right now.
 
-<h2><b>Linux Install</b></h2>
+<h2><b>Linux Install (Standalone)</b></h2>
 
+Download the .deb file and in the directory run:
 
+```
+sudo dpkg -i trish.deb
+```
 
-You can then point to https://localhost:5000/static/index.html
+Then visit the WebGUI at http:localhost:5000
+
 
 <h2><b>Usage</b></h2>
-
-To stop it:
-```
-docker-compose down
-```
-
-To start it:
-```
-docker-compose up -d
-```
 
 The WebGUI is pretty straightforrward, enter text/send and Trish responds in the dialog box.
 
